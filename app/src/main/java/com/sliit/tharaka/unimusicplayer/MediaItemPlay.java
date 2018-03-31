@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.support.v7.app.AppCompatActivity;
 
 import com.sliit.tharaka.unimusicplayer.model.MusicHandler;
 
@@ -11,10 +12,10 @@ import com.sliit.tharaka.unimusicplayer.model.MusicHandler;
  * Created by ASUS on 3/31/2018.
  */
 
-public class MediaItemPlay extends Activity {
+public class MediaItemPlay extends AppCompatActivity {
 
     private MediaPlayer mediaplayer;
-
+    private MusicHandler song;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,15 @@ public class MediaItemPlay extends Activity {
 
     }
 
+    public  MediaItemPlay(){
+
+    }
+    public MediaItemPlay(MediaPlayer mediaPlayer, MusicHandler song) {
+        this.mediaplayer = mediaPlayer;
+        this.song = song;
+    }
     public void CreatePlayer(Context context, MusicHandler song) {
+
         mediaplayer = mediaplayer.create(context, song.getSong());
     }
 

@@ -6,7 +6,7 @@
     <color name="adminButtonText">#ffffff</color>
     <color name="adminButtonBck1">#2C3E50</color>
     <color name="adminButtonBck2">#696969</color>
-    <color name="media_item_icon_not_playing">#ccc</color>
+    <color name="media_item_icon_not_playing">#000000</color>
     <color name="fullscreen_secondary_line_color">#E5CCCCCC</color>
     <color name="fullscreen_line_color">#E5FFFFFF</color>
 
