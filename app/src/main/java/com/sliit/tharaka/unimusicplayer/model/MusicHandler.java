@@ -10,6 +10,9 @@ public class MusicHandler {
     private String singer;
     private int song;
 
+    public MusicHandler () {
+
+    }
     public MusicHandler(String name, String singer, int song) {
         this.name = name;
         this.singer = singer;

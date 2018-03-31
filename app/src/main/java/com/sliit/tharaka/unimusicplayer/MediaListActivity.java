@@ -1,7 +1,10 @@
 package com.sliit.tharaka.unimusicplayer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.sliit.tharaka.unimusicplayer.model.MusicHandler;
@@ -39,6 +42,19 @@ public class MediaListActivity extends AppCompatActivity{
 
         musicAdapter = new MusicAdapter(this, R.layout.media_item, arrayList);
         songListView.setAdapter(musicAdapter);
+
+        songListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                Intent intent = new Intent(MediaListActivity.this, MediaItemPlay.class);
+                intent.putExtra("SongName", arrayList.get(position).getName());
+                intent.putExtra("SongID", arrayList.get(position).getSong());
+                intent.putExtra("ArtistName", arrayList.get(position).getSinger());
+                MediaListActivity.this.startActivity(intent);
+            }
+        });
 
     }
 
