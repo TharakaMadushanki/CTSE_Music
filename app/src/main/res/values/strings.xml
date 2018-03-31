@@ -10,6 +10,7 @@
     <string name="skip_next">skip to next</string>
     <string name="skip_prev">skip to previous</string>
     <string name="back_arrow">skip to back</string>
+    <string name="play_eq">Play itemk</string>
 
 
 </resources>
