@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2C3E50</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="adminButtonText">#000000</color>
+    <color name="adminButtonBck1">#2E86C1</color>
+    <color name="adminButtonBck2">#ffffff</color>
+    <color name="media_item_icon_not_playing">#ccc</color>
+
+
+</resources>

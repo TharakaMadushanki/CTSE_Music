@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">UNI Music Player</string>
+    <string name="nav_header_username">My Music</string>
+    <string name="buttonAllSongs">All songs</string>
+    <string name="button2">Favorites</string>
+    <string name="button3">Playlists</string>
+    <string name="button4">Settings</string>
+
+
+</resources>
