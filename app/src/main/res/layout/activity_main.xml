@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/admin_bck"
+    android:background="@drawable/admin_music"
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
@@ -29,7 +29,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1.0"
                 android:background="@color/adminButtonBck2"
-                android:drawableLeft="@drawable/ic_allsongs"
+                android:drawableLeft="@drawable/ic_allmusic_black_24dp"
                 android:text="@string/buttonAllSongs"
                 android:textColor="@color/adminButtonText" />
 
@@ -67,7 +67,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1.0"
                 android:background="@color/adminButtonBck2"
-                android:drawableLeft="@drawable/ic_settings"
+                android:drawableLeft="@drawable/ic_settings_icon"
                 android:text="@string/button4"
                 android:textColor="@color/adminButtonText" />
 

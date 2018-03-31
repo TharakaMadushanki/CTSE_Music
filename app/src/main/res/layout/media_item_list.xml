@@ -8,6 +8,7 @@
     tools:context="com.sliit.tharaka.unimusicplayer.MediaListActivity">
 
     <ListView
+        android:background="@drawable/custom_back"
         android:id="@+id/song-list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
