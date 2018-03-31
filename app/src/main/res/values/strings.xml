@@ -5,6 +5,10 @@
     <string name="button2">Favorites</string>
     <string name="button3">Playlists</string>
     <string name="button4">Settings</string>
+    <string name="background_image_str">Background image for album art</string>
+    <string name="play_pause">play or pause</string>
+    <string name="skip_next">skip to next</string>
+    <string name="skip_prev">skip to previous</string>
 
 
 </resources>
