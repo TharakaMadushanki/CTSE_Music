@@ -94,7 +94,7 @@ public class MusicAdapter extends BaseAdapter {
             if (isPaused) {
                 mediaplayer.start();
                 isPaused = false;
-                viewholder.imageViewPlay.setImageResource(R.drawable.ic_pause_white_24dp);
+                viewholder.imageViewPlay.setImageResource(R.drawable.uamp_ic_pause_white_24dp);
             } else {
                 mediaplayer.pause();
                 isPaused = true;
@@ -104,7 +104,7 @@ public class MusicAdapter extends BaseAdapter {
             if(flag) {
                 mediaplayer = android.media.MediaPlayer.create(context, music.getSong());
                 mediaplayer.start();
-                viewholder.imageViewPlay.setImageResource(R.drawable.ic_pause_white_24dp);
+                viewholder.imageViewPlay.setImageResource(R.drawable.uamp_ic_pause_white_24dp);
                 flag = false;
                 nowPlaying = position;
             } else {
@@ -115,7 +115,7 @@ public class MusicAdapter extends BaseAdapter {
                 mediaplayer = null;
                 mediaplayer = android.media.MediaPlayer.create(context, music.getSong());
                 mediaplayer.start();
-                viewholder.imageViewPlay.setImageResource(R.drawable.ic_pause_white_24dp);
+                viewholder.imageViewPlay.setImageResource(R.drawable.uamp_ic_pause_white_24dp);
                 flag = false;
                 nowPlaying = position;
             }
