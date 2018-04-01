@@ -6,33 +6,33 @@ package com.sliit.tharaka.unimusicplayer.model;
 
 public class MusicHandler {
 
-    private String name;
-    private String singer;
+    private String songName;
+    private String singerName;
     private int song;
 
     public MusicHandler () {
 
     }
     public MusicHandler(String name, String singer, int song) {
-        this.name = name;
-        this.singer = singer;
+        this.songName = name;
+        this.singerName = singer;
         this.song = song;
     }
 
     public String getName() {
-        return name;
+        return songName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.songName = name;
     }
 
-    public String getSinger() {
-        return singer;
+    public String getSingerName() {
+        return singerName;
     }
 
-    public void setSinger(String singer) {
-        this.singer = singer;
+    public void setSingerName(String singerName) {
+        this.singerName = singerName;
     }
 
     public int getSong() {

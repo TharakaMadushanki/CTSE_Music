@@ -77,7 +77,7 @@ public class MusicAdapter extends BaseAdapter {
 
 
         viewholder.txtName.setText(music.getName());
-        viewholder.txtSinger.setText(music.getSinger());
+        viewholder.txtSinger.setText(music.getSingerName());
 
         // play music
         viewholder.imageViewPlay.setOnClickListener(new View.OnClickListener() {

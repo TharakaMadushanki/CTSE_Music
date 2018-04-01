@@ -29,7 +29,7 @@ public class MediaItemPlay extends AppCompatActivity {
         setContentView(R.layout.media_item_play);
 
         song.setSong(getIntent().getIntExtra("SongID", 0));
-        song.setSinger(getIntent().getStringExtra("ArtistName"));
+        song.setSingerName(getIntent().getStringExtra("ArtistName"));
         song.setName(getIntent().getStringExtra("SongName"));
 
         viewHolder.songName = (TextView) findViewById(R.id.song_title);
@@ -49,7 +49,7 @@ public class MediaItemPlay extends AppCompatActivity {
         super.onStart();
 
         viewHolder.songName.setText(song.getName());
-        viewHolder.artistName.setText(song.getSinger());
+        viewHolder.artistName.setText(song.getSingerName());
 
         viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
         viewHolder.skipPrev.setImageResource(R.drawable.ic_skip_previous_white_48dp);

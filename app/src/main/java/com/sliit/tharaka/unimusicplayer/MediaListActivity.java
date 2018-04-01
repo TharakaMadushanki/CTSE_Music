@@ -51,7 +51,7 @@ public class MediaListActivity extends AppCompatActivity{
                 Intent intent = new Intent(MediaListActivity.this, MediaItemPlay.class);
                 intent.putExtra("SongName", arrayList.get(position).getName());
                 intent.putExtra("SongID", arrayList.get(position).getSong());
-                intent.putExtra("ArtistName", arrayList.get(position).getSinger());
+                intent.putExtra("ArtistName", arrayList.get(position).getSingerName());
                 MediaListActivity.this.startActivity(intent);
             }
         });
