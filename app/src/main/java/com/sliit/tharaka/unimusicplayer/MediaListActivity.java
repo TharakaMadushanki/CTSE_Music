@@ -61,4 +61,11 @@ public class MediaListActivity extends AppCompatActivity{
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("OnDestroy","on destroy called in list activity");
+        musicAdapter.stopActivity();
+    }
 }

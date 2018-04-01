@@ -18,7 +18,7 @@ public class MusicAdapter extends BaseAdapter {
     private Context context;
     private int layout;
     private ArrayList<MusicHandler> arrayList;
-    private android.media.MediaPlayer mediaplayer;
+    private android.media.MediaPlayer mediaplayer = null;
     private boolean flag = true;
     private boolean isPaused = false;
     private int nowPlaying = -1;
@@ -121,4 +121,14 @@ public class MusicAdapter extends BaseAdapter {
             }
         }
     }
+
+    public void stopActivity() {
+        if(mediaplayer != null) {
+            if (mediaplayer.isPlaying()) {
+                mediaplayer.stop();
+                mediaplayer.release();
+            }
+        }
+    }
+
 }

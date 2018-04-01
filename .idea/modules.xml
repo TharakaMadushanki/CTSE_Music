@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CTSE Music Player.iml" filepath="$PROJECT_DIR$/CTSE Music Player.iml" />
+      <module fileurl="file://F:\naditha\SLIIT\4th Year\CTSE\projects\assignment\New folder\CTSE_Music\CTSE Music Player.iml" filepath="F:\naditha\SLIIT\4th Year\CTSE\projects\assignment\New folder\CTSE_Music\CTSE Music Player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CTSE_Music.iml" filepath="$PROJECT_DIR$/CTSE_Music.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
