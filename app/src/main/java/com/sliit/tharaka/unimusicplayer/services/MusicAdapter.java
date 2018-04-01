@@ -74,8 +74,6 @@ public class MusicAdapter extends BaseAdapter {
 
         final MusicHandler music = arrayList.get(position);
 
-
-
         viewholder.txtName.setText(music.getName());
         viewholder.txtSinger.setText(music.getSinger());
 
@@ -83,13 +81,10 @@ public class MusicAdapter extends BaseAdapter {
         viewholder.imageViewPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Log.i("from On click", "flag : " + flag + " isPuased : " + isPaused + " isPositionChanged : " + isPosChanged + " position : " + position + " nowPlaying : " + nowPlaying);
                 playBackControll(position, viewholder, music);
-
             }
         }) ;
-
         return convertView;
     }
 
@@ -131,5 +126,4 @@ public class MusicAdapter extends BaseAdapter {
             }
         }
     }
-
 }
