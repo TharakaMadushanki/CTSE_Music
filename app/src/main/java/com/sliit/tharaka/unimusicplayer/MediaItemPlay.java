@@ -1,8 +1,10 @@
 package com.sliit.tharaka.unimusicplayer;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -13,6 +15,7 @@ import com.sliit.tharaka.unimusicplayer.services.MediaPlayerService;
 
 public class MediaItemPlay extends AppCompatActivity {
 
+    private final static String TAG = "Media Item Lifecycle Watch";
     private MusicHandler song = new MusicHandler();
     private View view;
     private View controllers;
@@ -22,10 +25,12 @@ public class MediaItemPlay extends AppCompatActivity {
     private Boolean isSongSet = false;
     private Boolean isPause = false;
 
+    @SuppressLint("LongLogTag")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.media_item_play);
+        Log.i(TAG,"Lifecycle Event: onCreate Command");
 
         song.setSong(getIntent().getIntExtra("SongID", 0));
         song.setSingerName(getIntent().getStringExtra("ArtistName"));
@@ -42,9 +47,11 @@ public class MediaItemPlay extends AppCompatActivity {
         controllers = findViewById(R.id.controllers);
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     protected void onStart() {
         super.onStart();
+        Log.i(TAG,"Lifecycle Event: onStart Command");
 
         viewHolder.songName.setText(song.getName());
         viewHolder.artistName.setText(song.getSingerName());
@@ -58,9 +65,12 @@ public class MediaItemPlay extends AppCompatActivity {
         mediaplayer = mediaplayer.create(this, song.getSong());
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     protected void onResume() {
         super.onResume();
+        Log.i(TAG,"Lifecycle Event: onResume Command");
+
         if(mediaplayer.isPlaying()){
             viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
         } else {
@@ -73,15 +83,15 @@ public class MediaItemPlay extends AppCompatActivity {
                 if(!isSongSet){
                     if(!isPause) {
                         mediaPlayerService.play();
-                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
+                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_24dp);
                         isSongSet = true;
                     } else {
-                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
+                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_24dp);
                         mediaPlayerService.play();
                     }
                 } else {
                     if(isPause) {
-                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
+                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_24dp);
                         mediaPlayerService.play();
                         isPause = false;
                     } else {

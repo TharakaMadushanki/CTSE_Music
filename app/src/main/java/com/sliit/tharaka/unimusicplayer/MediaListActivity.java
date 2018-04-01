@@ -1,8 +1,11 @@
 package com.sliit.tharaka.unimusicplayer;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -14,14 +17,17 @@ import java.util.ArrayList;
 
 public class MediaListActivity extends AppCompatActivity{
 
+    private final static String TAG = "Media List Lifecycle Watch";
     private ArrayList<MusicHandler> arrayList;
     private ListView songListView;
     private MusicAdapter musicAdapter;
 
+    @SuppressLint("LongLogTag")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.media_item_list);
+        Log.i(TAG,"Lifecycle Event: onCreate Command");
 
         songListView = (ListView) findViewById(R.id.song_list);
         arrayList = new ArrayList<>();
@@ -49,6 +55,9 @@ public class MediaListActivity extends AppCompatActivity{
                 intent.putExtra("SongID", arrayList.get(position).getSong());
                 intent.putExtra("ArtistName", arrayList.get(position).getSingerName());
                 MediaListActivity.this.startActivity(intent);
+
+                Intent playBackServiceIntent = new Intent(MediaListActivity.this,MyBackgroundService.class);
+                startService(playBackServiceIntent);
             }
         });
     }
