@@ -3,6 +3,7 @@ package com.sliit.tharaka.unimusicplayer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -51,5 +52,12 @@ public class MediaListActivity extends AppCompatActivity{
                 MediaListActivity.this.startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("OnDestroy","on destroy called in list activity");
+        musicAdapter.stopActivity();
     }
 }
