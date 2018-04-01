@@ -1,25 +1,16 @@
 package com.sliit.tharaka.unimusicplayer;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.content.Context;
 import android.media.MediaPlayer;
-import android.support.v4.media.session.MediaControllerCompat;
-import android.support.v4.media.session.PlaybackStateCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.sliit.tharaka.unimusicplayer.model.MusicHandler;
 import com.sliit.tharaka.unimusicplayer.services.MediaPlayerService;
-import com.sliit.tharaka.unimusicplayer.services.MusicAdapter;
 
-/**
- * Created by ASUS on 3/31/2018.
- */
 
 public class MediaItemPlay extends AppCompatActivity {
 
@@ -29,8 +20,8 @@ public class MediaItemPlay extends AppCompatActivity {
     ViewHolder viewHolder= new ViewHolder();
     private MediaPlayer mediaplayer;
     private MediaPlayerService mediaPlayerService;
-    Boolean isSongSet = false;
-    Boolean isPause = false;
+    private Boolean isSongSet = false;
+    private Boolean isPause = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +64,11 @@ public class MediaItemPlay extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        if(mediaplayer.isPlaying()){
+            viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
+        } else {
+            viewHolder.playPause.setImageResource(R.drawable.ic_play_arrow_black_36dp);
+        }
 
         viewHolder.playPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,8 +107,6 @@ public class MediaItemPlay extends AppCompatActivity {
         TextView textStart;
         TextView textEnd;
         SeekBar seekBar;
-
-
     }
 
     public MediaItemPlay() {
@@ -123,7 +117,4 @@ public class MediaItemPlay extends AppCompatActivity {
         this.mediaplayer = mediaPlayer;
         this.song = song;
     }
-
-
-
 }

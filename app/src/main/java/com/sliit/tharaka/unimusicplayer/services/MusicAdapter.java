@@ -1,7 +1,6 @@
 package com.sliit.tharaka.unimusicplayer.services;
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,9 +22,11 @@ public class MusicAdapter extends BaseAdapter {
     private Context context;
     private int layout;
     private ArrayList<MusicHandler> arrayList;
-    private MediaPlayer mediaplayer;
+    private android.media.MediaPlayer mediaplayer;
     private boolean flag = true;
     private boolean isPaused = false;
+    private int nowPlaying = -1;
+    private boolean isPosChanged = false;
 
     public MusicAdapter(Context context, int layout, ArrayList<MusicHandler> arrayList) {
         this.context = context;
@@ -54,7 +55,7 @@ public class MusicAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup viewGroup) {
+    public View getView(final int position, View convertView, ViewGroup viewGroup) {
         final ViewHolder viewholder;
         if (convertView == null) {
             viewholder = new ViewHolder();
@@ -73,6 +74,8 @@ public class MusicAdapter extends BaseAdapter {
 
         final MusicHandler music = arrayList.get(position);
 
+
+
         viewholder.txtName.setText(music.getName());
         viewholder.txtSinger.setText(music.getSinger());
 
@@ -81,29 +84,52 @@ public class MusicAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
 
-                Log.i("from On click", "flag : " + flag + " isPuased : " + isPaused);
-                if (flag && !isPaused) {
-                    mediaplayer = MediaPlayer.create(context, music.getSong());
-                    flag = false;
-                    mediaplayer.setVolume(50, 50);
-                    mediaplayer.start();
-                    viewholder.imageViewPlay.setImageResource(R.drawable.ic_pause_white_24dp);
-                } else {
-                    if (isPaused) {
-                        mediaplayer.start();
-                        viewholder.imageViewPlay.setImageResource(R.drawable.ic_pause_white_24dp);
-                        isPaused = false;
-                    } else {
-                        mediaplayer.pause();
-                        viewholder.imageViewPlay.setImageResource(R.drawable.ic_play_arrow_black_36dp);
-                        isPaused = true;
-                    }
-                }
+                Log.i("from On click", "flag : " + flag + " isPuased : " + isPaused + " isPositionChanged : " + isPosChanged + " position : " + position + " nowPlaying : " + nowPlaying);
+                playBackControll(position, viewholder, music);
 
             }
         }) ;
 
         return convertView;
+    }
+
+    public void playBackControll(int position, ViewHolder viewholder, MusicHandler music) {
+        if(position == nowPlaying) {
+            isPosChanged = false;
+        } else {
+            isPosChanged = true;
+        }
+
+        if (!isPosChanged) {
+            if (isPaused) {
+                mediaplayer.start();
+                isPaused = false;
+                viewholder.imageViewPlay.setImageResource(R.drawable.ic_pause_white_24dp);
+            } else {
+                mediaplayer.pause();
+                isPaused = true;
+                viewholder.imageViewPlay.setImageResource(R.drawable.ic_play_arrow_black_36dp);
+            }
+        } else {
+            if(flag) {
+                mediaplayer = android.media.MediaPlayer.create(context, music.getSong());
+                mediaplayer.start();
+                viewholder.imageViewPlay.setImageResource(R.drawable.ic_pause_white_24dp);
+                flag = false;
+                nowPlaying = position;
+            } else {
+                viewholder.imageViewPlay.setImageResource(R.drawable.ic_play_arrow_black_36dp);
+                if(mediaplayer.isPlaying()){
+                    mediaplayer.stop();
+                }
+                mediaplayer = null;
+                mediaplayer = android.media.MediaPlayer.create(context, music.getSong());
+                mediaplayer.start();
+                viewholder.imageViewPlay.setImageResource(R.drawable.ic_pause_white_24dp);
+                flag = false;
+                nowPlaying = position;
+            }
+        }
     }
 
 }
