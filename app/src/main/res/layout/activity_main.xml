@@ -20,7 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
-
             android:orientation="horizontal">
 
             <Button
@@ -31,20 +30,21 @@
                 android:background="@color/adminButtonBck2"
                 android:drawableLeft="@drawable/ic_allmusic_black_24dp"
                 android:text="@string/buttonAllSongs"
+                android:textAllCaps="false"
                 android:padding="10dp"
                 android:textColor="@color/adminButtonText" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnFav"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1.0"
                 android:background="@color/adminButtonBck1"
                 android:drawableLeft="@drawable/ic_favo"
-                android:text="@string/button2"
+                android:text="@string/btnFav"
+                android:textAllCaps="false"
                 android:padding="10dp"
                 android:textColor="@color/adminButtonText" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -54,52 +54,30 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnPlaylists"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1.0"
                 android:background="@color/adminButtonBck1"
                 android:drawableLeft="@drawable/ic_playlist_music_black_24dp"
-                android:text="@string/button3"
+                android:text="@string/btnPlaylists"
+                android:textAllCaps="false"
                 android:padding="10dp"
                 android:textColor="@color/adminButtonText" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btnSettings"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1.0"
                 android:background="@color/adminButtonBck2"
                 android:drawableLeft="@drawable/ic_settings_icon"
-                android:text="@string/button4"
+                android:text="@string/btnSettings"
                 android:padding="10dp"
+                android:textAllCaps="false"
                 android:textColor="@color/adminButtonText" />
-
         </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>
-
-
-
-
-    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-        <!--android:id="@+id/linearLayout"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="200dp"-->
-        <!--android:background="?attr/colorAccent"-->
-        <!--android:gravity="bottom"-->
-        <!--android:orientation="vertical"-->
-        <!--android:padding="16dp"-->
-        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintHorizontal_bias="1.0"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent">-->
-
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/nav_header_username"-->
-            <!--android:textAppearance="@style/TextAppearance.AppCompat.Body1" />-->
 
