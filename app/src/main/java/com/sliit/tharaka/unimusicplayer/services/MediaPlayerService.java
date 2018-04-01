@@ -4,10 +4,6 @@ import android.media.MediaPlayer;
 import android.content.Context;
 import com.sliit.tharaka.unimusicplayer.model.MusicHandler;
 
-/**
- * Created by ASUS on 3/31/2018.
- */
-
 public class MediaPlayerService {
 
     private MediaPlayer mediaplayer;

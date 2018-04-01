@@ -43,6 +43,5 @@
             android:ellipsize="end"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="?android:attr/textColorSecondary"/>
-
     </LinearLayout>
 </RelativeLayout>

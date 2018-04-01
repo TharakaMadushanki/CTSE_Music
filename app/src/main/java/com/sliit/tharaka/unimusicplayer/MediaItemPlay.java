@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.sliit.tharaka.unimusicplayer.model.MusicHandler;
 import com.sliit.tharaka.unimusicplayer.services.MediaPlayerService;
 
-
 public class MediaItemPlay extends AppCompatActivity {
 
     private MusicHandler song = new MusicHandler();
@@ -41,7 +40,6 @@ public class MediaItemPlay extends AppCompatActivity {
         viewHolder.textEnd = (TextView) findViewById(R.id.endText);
         viewHolder.seekBar = (SeekBar) findViewById(R.id.seekBar1);
         controllers = findViewById(R.id.controllers);
-
     }
 
     @Override
@@ -58,7 +56,6 @@ public class MediaItemPlay extends AppCompatActivity {
         mediaPlayerService = new MediaPlayerService(mediaplayer, song);
         mediaPlayerService.CreatePlayer(this, song);
         mediaplayer = mediaplayer.create(this, song.getSong());
-
     }
 
     @Override
@@ -93,7 +90,6 @@ public class MediaItemPlay extends AppCompatActivity {
                         isPause = true;
                     }
                 }
-
             }
         });
     }

@@ -12,10 +12,6 @@ import com.sliit.tharaka.unimusicplayer.services.MusicAdapter;
 
 import java.util.ArrayList;
 
-/**
- * Created by ASUS on 3/31/2018.
- */
-
 public class MediaListActivity extends AppCompatActivity{
 
     private ArrayList<MusicHandler> arrayList;
@@ -55,10 +51,5 @@ public class MediaListActivity extends AppCompatActivity{
                 MediaListActivity.this.startActivity(intent);
             }
         });
-
     }
-
-
-
-
 }

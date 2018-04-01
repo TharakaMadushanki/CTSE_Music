@@ -14,10 +14,6 @@ import com.sliit.tharaka.unimusicplayer.model.MusicHandler;
 
 import java.util.ArrayList;
 
-/**
- * Created by ASUS on 3/31/2018.
- */
-
 public class MusicAdapter extends BaseAdapter {
     private Context context;
     private int layout;
@@ -60,7 +56,6 @@ public class MusicAdapter extends BaseAdapter {
         if (convertView == null) {
             viewholder = new ViewHolder();
             LayoutInflater layoutinflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-
             convertView = layoutinflater.inflate(layout, null);
             viewholder.txtName = (TextView) convertView.findViewById(R.id.song_title);
             viewholder.txtSinger = (TextView) convertView.findViewById(R.id.artist_name);
