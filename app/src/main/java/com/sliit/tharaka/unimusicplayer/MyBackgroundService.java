@@ -44,5 +44,4 @@ public class MyBackgroundService extends Service {
         }
         mediaPlayer.release();
     }
-
 }

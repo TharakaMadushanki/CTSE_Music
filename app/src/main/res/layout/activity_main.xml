@@ -4,10 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/admin_music"
     android:gravity="bottom"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:configChanges="orientation|screenSize|keyboardHidden"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"

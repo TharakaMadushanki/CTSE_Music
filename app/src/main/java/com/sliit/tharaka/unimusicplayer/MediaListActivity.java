@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.sliit.tharaka.unimusicplayer.model.MusicHandler;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 public class MediaListActivity extends AppCompatActivity{
 
-    private final static String TAG = "Media List Lifecycle Watch";
+    private static final String TAG = "Media List Lifecycle Watch";
     private ArrayList<MusicHandler> arrayList;
     private ListView songListView;
     private MusicAdapter musicAdapter;
@@ -32,10 +33,10 @@ public class MediaListActivity extends AppCompatActivity{
         songListView = (ListView) findViewById(R.id.song_list);
         arrayList = new ArrayList<>();
         arrayList.add(new MusicHandler("Idoraye Nagara Kone", "Amal Perera", R.raw.idorayenagarakone));
-        arrayList.add(new MusicHandler("Mal Pita Mal", "Amal Perera Cover", R.raw.malpitamal));
-        arrayList.add(new MusicHandler("Ran Meevitha", "Amal Perera", R.raw.ranmeevitha));
+        arrayList.add(new MusicHandler("Mal Pita Mal Watena Digu Mawathe Piya Matha", "Amal Perera Cover", R.raw.malpitamal));
+        arrayList.add(new MusicHandler("Ran Meevitha Purawaa", "Amal Perera", R.raw.ranmeevitha));
         arrayList.add(new MusicHandler("Sanda Midulata Enawa", "Amal Perera Cover", R.raw.sandamidulataenawa));
-        arrayList.add(new MusicHandler("Kalpana Lowa Mal","Api Machan Cover", R.raw.kalpanalowa));
+        arrayList.add(new MusicHandler("Kalpana Lowa Mal Wane","Api Machan Cover", R.raw.kalpanalowa));
         arrayList.add(new MusicHandler("Pana Mada Kadithi","Sunil Edirisinghe", R.raw.panamadakadithi));
         arrayList.add(new MusicHandler("Rahase Hadana","Api Machan",R.raw.rahasehandana));
         arrayList.add(new MusicHandler("Adaraye Unuhuma","Somathilaka Jayamaha",R.raw.adrayeunuhuma));
@@ -65,7 +66,7 @@ public class MediaListActivity extends AppCompatActivity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i("OnDestroy","on destroy called in list activity");
+        Log.i("OnDestroy","on destroy called in media list activity");
         musicAdapter.stopActivity();
     }
 }

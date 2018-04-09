@@ -10,5 +10,7 @@
     <string name="skip_next">skip to next</string>
     <string name="skip_prev">skip to previous</string>
     <string name="back_arrow">skip to back</string>
-    <string name="play_eq">Play itemk</string>
+    <string name="play_eq">Play item</string>
+    <string name="song_title">Song Title</string>
+    <string name="artist_name">Artist Name</string>
 </resources>

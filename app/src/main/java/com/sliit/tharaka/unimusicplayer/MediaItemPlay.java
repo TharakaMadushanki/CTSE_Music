@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -44,7 +45,10 @@ public class MediaItemPlay extends AppCompatActivity {
         viewHolder.textStart = (TextView) findViewById(R.id.startText);
         viewHolder.textEnd = (TextView) findViewById(R.id.endText);
         viewHolder.seekBar = (SeekBar) findViewById(R.id.seekBar1);
-        controllers = findViewById(R.id.controllers);
+        //controllers = findViewById(R.id.controllers);
+
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.controllers);
+        linearLayout.setVisibility(View.VISIBLE);
     }
 
     @SuppressLint("LongLogTag")
@@ -74,7 +78,7 @@ public class MediaItemPlay extends AppCompatActivity {
         if(mediaplayer.isPlaying()){
             viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
         } else {
-            viewHolder.playPause.setImageResource(R.drawable.ic_play_arrow_black_36dp);
+            viewHolder.playPause.setImageResource(R.drawable.uamp_ic_play_arrow_white_48dp);
         }
 
         viewHolder.playPause.setOnClickListener(new View.OnClickListener() {
@@ -83,20 +87,20 @@ public class MediaItemPlay extends AppCompatActivity {
                 if(!isSongSet){
                     if(!isPause) {
                         mediaPlayerService.play();
-                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_24dp);
+                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
                         isSongSet = true;
                     } else {
-                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_24dp);
+                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
                         mediaPlayerService.play();
                     }
                 } else {
                     if(isPause) {
-                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_24dp);
+                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
                         mediaPlayerService.play();
                         isPause = false;
                     } else {
                         mediaPlayerService.pause();
-                        viewHolder.playPause.setImageResource(R.drawable.ic_play_arrow_black_36dp);
+                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_play_arrow_white_48dp);
                         isPause = true;
                     }
                 }
