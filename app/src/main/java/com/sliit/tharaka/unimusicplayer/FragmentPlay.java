@@ -8,10 +8,6 @@ import android.view.ViewGroup;
 
 import com.sliit.tharaka.unimusicplayer.model.MusicHandler;
 
-/**
- * Created by ASUS on 4/9/2018.
- */
-
 public class FragmentPlay extends Fragment {
 
     private MusicHandler song = new MusicHandler();

@@ -78,6 +78,7 @@ public class MusicAdapter extends BaseAdapter {
             public void onClick(View view) {
                 Log.i("from On click", "flag : " + flag + " isPuased : " + isPaused + " isPositionChanged : " + isPosChanged + " position : " + position + " nowPlaying : " + nowPlaying);
                 playBackControll(position, viewholder, music);
+
             }
         }) ;
         return convertView;

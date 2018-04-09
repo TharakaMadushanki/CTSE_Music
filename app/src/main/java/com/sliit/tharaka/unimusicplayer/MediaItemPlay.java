@@ -64,7 +64,7 @@ public class MediaItemPlay extends AppCompatActivity {
         viewHolder.skipPrev.setImageResource(R.drawable.ic_skip_previous_white_48dp);
         viewHolder.skipNext.setImageResource(R.drawable.ic_skip_next_white_48dp);
 
-        mediaPlayerService = new MediaPlayerService(mediaplayer, song);
+        mediaPlayerService = new MediaPlayerService();
         mediaPlayerService.CreatePlayer(this, song);
         mediaplayer = mediaplayer.create(this, song.getSong());
     }
@@ -89,9 +89,6 @@ public class MediaItemPlay extends AppCompatActivity {
                         mediaPlayerService.play();
                         viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
                         isSongSet = true;
-                    } else {
-                        viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
-                        mediaPlayerService.play();
                     }
                 } else {
                     if(isPause) {
@@ -108,6 +105,12 @@ public class MediaItemPlay extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mediaPlayerService.destory();
+    }
+
     private class ViewHolder {
         ImageView skipPrev;
         ImageView skipNext;
@@ -119,12 +122,4 @@ public class MediaItemPlay extends AppCompatActivity {
         SeekBar seekBar;
     }
 
-    public MediaItemPlay() {
-
-    }
-
-    public MediaItemPlay(MediaPlayer mediaPlayer, MusicHandler song) {
-        this.mediaplayer = mediaPlayer;
-        this.song = song;
-    }
 }
