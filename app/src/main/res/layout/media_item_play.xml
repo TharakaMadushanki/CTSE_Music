@@ -14,6 +14,15 @@
         android:layout_alignParentEnd="true"
         android:background="@drawable/fullscreen_bg_gradient" >
 
+        <ImageView
+            android:id="@+id/musicImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/music_img"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/music_image"
+            android:layout_above="@+id/song_title"/>
+
         <TextView
             android:id="@+id/song_title"
             android:layout_width="fill_parent"

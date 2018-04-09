@@ -13,4 +13,5 @@
     <string name="play_eq">Play item</string>
     <string name="song_title">Song Title</string>
     <string name="artist_name">Artist Name</string>
+    <string name="music_image">Music Image</string>>
 </resources>
