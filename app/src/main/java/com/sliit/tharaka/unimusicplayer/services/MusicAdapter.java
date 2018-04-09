@@ -68,6 +68,7 @@ public class MusicAdapter extends BaseAdapter {
         }
 
         final MusicHandler music = arrayList.get(position);
+       // mediaplayer = MediaPlayerSingleton.GetMediaPlayer(music, this.context);
 
         viewholder.txtName.setText(music.getName());
         viewholder.txtSinger.setText(music.getSingerName());

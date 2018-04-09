@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.sliit.tharaka.unimusicplayer.model.MusicHandler;
 import com.sliit.tharaka.unimusicplayer.services.MediaPlayerService;
+import com.sliit.tharaka.unimusicplayer.services.MediaPlayerSingleton;
 
 public class MediaItemPlay extends AppCompatActivity {
 
@@ -46,6 +47,7 @@ public class MediaItemPlay extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        //mediaplayer = MediaPlayerSingleton.GetMediaPlayer(song, this);
         viewHolder.songName.setText(song.getName());
         viewHolder.artistName.setText(song.getSingerName());
 
