@@ -4,8 +4,7 @@
     android:id="@+id/playItemView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fullscreen_bg_gradient"
-    android:fitsSystemWindows="true">
+    android:background="@drawable/fullscreen_bg_gradient">
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -118,8 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:contentDescription="@string/skip_prev"
-                    android:src="@drawable/ic_skip_previous_white_48dp"
-                    android:visibility="visible" />
+                    android:src="@drawable/ic_skip_previous_white_48dp" />
 
                 <ImageView
                     android:id="@+id/play_pause"

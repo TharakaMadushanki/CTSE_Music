@@ -1,9 +1,5 @@
 package com.sliit.tharaka.unimusicplayer.model;
 
-/**
- * Created by ASUS on 3/31/2018.
- */
-
 public class MusicHandler {
 
     private String songName;

@@ -58,6 +58,9 @@ public class MediaListActivity extends AppCompatActivity{
                 MediaListActivity.this.startActivity(intent);
 
                 Intent playBackServiceIntent = new Intent(MediaListActivity.this,MyBackgroundService.class);
+                playBackServiceIntent.putExtra("SongName", arrayList.get(position).getName());
+                playBackServiceIntent.putExtra("SongID", arrayList.get(position).getSong());
+                playBackServiceIntent.putExtra("ArtistName", arrayList.get(position).getSingerName());
                 startService(playBackServiceIntent);
             }
         });

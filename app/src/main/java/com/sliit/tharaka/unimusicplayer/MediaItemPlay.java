@@ -33,6 +33,9 @@ public class MediaItemPlay extends AppCompatActivity {
         setContentView(R.layout.media_item_play);
         Log.i(TAG,"Lifecycle Event: onCreate Command");
 
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.controllers);
+        linearLayout.setVisibility(View.VISIBLE);
+
         song.setSong(getIntent().getIntExtra("SongID", 0));
         song.setSingerName(getIntent().getStringExtra("ArtistName"));
         song.setName(getIntent().getStringExtra("SongName"));
@@ -47,16 +50,6 @@ public class MediaItemPlay extends AppCompatActivity {
         viewHolder.seekBar = (SeekBar) findViewById(R.id.seekBar1);
         //controllers = findViewById(R.id.controllers);
 
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.controllers);
-        linearLayout.setVisibility(View.VISIBLE);
-    }
-
-    @SuppressLint("LongLogTag")
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i(TAG,"Lifecycle Event: onStart Command");
-
         viewHolder.songName.setText(song.getName());
         viewHolder.artistName.setText(song.getSingerName());
 
@@ -67,13 +60,6 @@ public class MediaItemPlay extends AppCompatActivity {
         mediaPlayerService = new MediaPlayerService();
         mediaPlayerService.CreatePlayer(this, song);
         mediaplayer = mediaplayer.create(this, song.getSong());
-    }
-
-    @SuppressLint("LongLogTag")
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i(TAG,"Lifecycle Event: onResume Command");
 
         if(mediaplayer.isPlaying()){
             viewHolder.playPause.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
@@ -103,6 +89,20 @@ public class MediaItemPlay extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @SuppressLint("LongLogTag")
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG,"Lifecycle Event: onStart Command");
+    }
+
+    @SuppressLint("LongLogTag")
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG,"Lifecycle Event: onResume Command");
     }
 
     @Override
